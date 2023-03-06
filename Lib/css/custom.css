@@ -1,0 +1,27 @@
+.input-group.input-group-outline .form-control {
+    padding: 0.05rem 0.75rem !important;
+    line-height: 0, 1 !important;
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px !important;
+    font-size: 24px;
+    line-height: 1.33;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px !important;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+.modal {
+    z-index: 5000;
+}

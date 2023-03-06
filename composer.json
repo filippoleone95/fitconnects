@@ -1,0 +1,10 @@
+{
+    "require": {
+        "twbs/bootstrap": "5.0.2",
+        "components/font-awesome": "^5.15",
+        "twbs/bootstrap-icons": "^1.8",
+        "phpauth/phpauth": "dev-master",
+        "delight-im/auth": "^8.3",
+        "monolog/monolog": "^2.3"
+    }
+}
