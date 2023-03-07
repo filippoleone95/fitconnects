@@ -20,8 +20,10 @@ function newEmail($motivo, $messaggio ,$destinatario,$username)
         $mailer->Host = "smtp.gmail.com";
         $mailer->SMTPAuth = true;
         $mailer->Username = 'fconnecst22@gmail.com';
-        $mailer->Password = 'Fitcon22-';
-        
+        /* $mailer->Password = 'Fitcon22-'; */
+        $mailer->Password = 'zxwufnlawvrjaexg';
+        $mailer->SMTPSecure = 'tls';
+        $mailer->Port = 587;
         
         $mailer->addAddress($destinatario, $username);
         $mailer->Subject = $motivo;
