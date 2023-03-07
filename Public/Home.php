@@ -46,7 +46,7 @@ $Notizie = new Notizia();
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#about">Notizie</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./Login.php">Accedi/Registrati</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./Login">Accedi/Registrati</a></li>
                 </ul>
             </div>
         </div>
@@ -64,7 +64,7 @@ $Notizie = new Notizia();
                 </div>
                 <div class="col-lg-8 align-self-baseline">
                     <p class="text-white-75 mb-5">Allenati, spensierato ...</p>
-                    <a class="btn btn-primary btn-xl" href="./Login.php">Vieni con noi</a>
+                    <a class="btn btn-primary btn-xl" href="./Login">Vieni con noi</a>
                 </div>
             </div>
         </div>
