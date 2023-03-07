@@ -2,16 +2,16 @@
 require "../Model/Database.php";
 
 // Database remoto
-/* $host= "localhost";
+$host= "localhost";
 $username = "fitconnects";
 $password = "Test";
-$db_name = "my_fitconnects"; */
+$db_name = "my_fitconnects";
 
 // Database locale
-$host= "127.0.0.1";
+/* $host= "127.0.0.1";
 $username = "filippo";
 $password = "Trk2.6Pro";
-$db_name = "fitconnects";
+$db_name = "fitconnects"; */
 
 $database = new Database($host,$username,$password,$db_name);
 $db = $database->getPDO(); 
