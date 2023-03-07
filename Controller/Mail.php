@@ -13,6 +13,7 @@ require $Vendor->getURL() . "/autoload.php";
 function newEmail($motivo, $messaggio ,$destinatario,$username)
 {
     //Create an instance; passing `true` enables exceptions
+    //Prova
     $mailer = new PHPMailer(true);
 
     try {
