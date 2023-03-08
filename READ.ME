@@ -1,0 +1,14 @@
+Problemi noti:
+
+- Sistemare colore di alcuni elementi (il problema probabilmente è che non carica correttamente i riferimenti per i link Bootstrap);
+
+- Nel progetto c'è una cartella Admin, che è la cartella in cui sono presenti i file che gestiscono l'amministratore del sito, solo che
+    il file "Administrator.php" è inutile in quanto porta ad una schermata di login evidentemente deprecata. Dopo che hai effettuato l'accesso come amministratore
+    viene caricata la Dashboard presente del path /Admin/DashboardAdmin.php, nella schermata è possibile andare in "Dashboard", "Istruttori", "Richieste", "Profilo" e "LogOut".
+    I file "Dashboard" e "Istruttori" vengono caricati dalla cartella Admin, mentre i file Richieste, Profilo e LogOut dalla cartella Public. 
+    Ciò che non mi è chiaro, è capire a cosa serve un ulteriore schermata di Login per l'amministratore, se comunque può effettuare l'accesso dalla pagina di login che 
+    utilizzano tutti gli utenti (Istruttori e Atleti). Tra l'altro la grafica della pagina di login dell'amministratore è da aggiornare. Se provi a fare l'accesso
+    dalla pagina di login per gli amministratori, non è possibile entrare come utente normale (funzionamento ovvio, ma secondo me andava testato).
+
+- I valori letti dal database sono tutti errati o non correttamente caricati. 
+
