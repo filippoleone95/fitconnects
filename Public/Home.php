@@ -21,7 +21,6 @@ $Notizie = new Notizia();
     <!-- Bootstrap Icons-->
     <!-- <link href="<?= $Vendor->getURL() ?>/twbs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" /> -->
     <link href="./vendor/twbs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <?php print$Vendor->getURL()?>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
@@ -29,13 +28,15 @@ $Notizie = new Notizia();
 
     <!-- MDB -->
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" /> -->
-    <link href="<?= $Lib->getURL() . "\css\styles.css" ?>" rel="stylesheet" />
+    <!-- <link href="<?= $Lib->getURL() . "\css\styles.css" ?>" rel="stylesheet" /> -->
+    <link href="/Lib/css/styles.css" rel="stylesheet" />
 
 </head>
 
 
 
 <body id="page-top">
+<?php print$Vendor->getURL()?>
     <!-- Navigation-->
     <?php
     include($View->getURL() . "/JS_Script.php"); ?>
