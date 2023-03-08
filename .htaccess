@@ -1,8 +1,6 @@
 <IfModule mod_rewrite.c>
     # Modifica la directory pubblica predefinita
     RewriteEngine On
-    RewriteRule ^$ public/ [L]
-    RewriteRule (.*) public/$1 [L]
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME}.php -f
     RewriteRule ^(.+)$ $1.php [L,QSA]
