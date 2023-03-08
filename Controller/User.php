@@ -19,7 +19,7 @@ if (isset($_POST['user']) && $_POST['user'] == "signup") {
             die('Le due password non corrispondono');
         }
         $userId = $auth->register($_POST['email'], $_POST['pass1'], $_POST['nome'], function ($selector, $token) {
-            $url = SERV_NAME . '/FitCon/Public/EmailVerify?selector=' . \urlencode($selector) . '&token=' . \urlencode($token);
+            $url = SERV_NAME . 'Public/EmailVerify?selector=' . \urlencode($selector) . '&token=' . \urlencode($token);
             $mex = 'Per completare la registrazione seguire il seguente url : ' . $url;
             newEmail("Registrazione", $mex, $_POST['email'], $_POST['nome']);
             // echo  $url; // Solo in programmazione Da togliere
