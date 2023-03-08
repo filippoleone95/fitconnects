@@ -18,6 +18,8 @@
     <link rel="icon" type="image/x-icon" href="<?= $Assets->getURL() ?>/assets/favicon.ico" />
     <!-- Bootstrap Icons-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons modificato in Home.php-->
+    <link href="./vendor/twbs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
