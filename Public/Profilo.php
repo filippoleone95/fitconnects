@@ -2,7 +2,7 @@
 if (!isset($_COOKIE["dark"])) {
     $_COOKIE["dark"] = "";
 }
-include("../Controller/DashBoard.php");
+include("../Controller/Dashboard.php");
 include("../Controller/Profilo.php");
 include($View->getURL() . "/JS_Script.php");
 ?>

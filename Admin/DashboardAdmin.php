@@ -2,7 +2,7 @@
 if(!isset($_COOKIE["dark"])){
     $_COOKIE["dark"] = "";
 }
-include("../Controller/DashBoard.php");
+include("../Controller/Dashboard.php");
 if (!$auth->hasRole(\Delight\Auth\Role::ADMIN)) {
     header("Location:".$Public->getURL()."/Login.php");
 }

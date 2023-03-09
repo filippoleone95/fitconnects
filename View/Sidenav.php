@@ -28,7 +28,7 @@
                 <?php  }
                 ?>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="<?= $Public->getURL() . "/DashBoard"; ?>" id="nav_dash">
+                    <a class="nav-link text-white " href="<?= $Public->getURL() . "/Dashboard"; ?>" id="nav_dash">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
                         </div>
@@ -82,7 +82,7 @@
             } else {
             ?>
                 <li class="nav-item">
-                    <a class="nav-link text-white " href="<?= $Admin->getURL() . "/DashBoardAdmin"; ?>" id="nav_dash">
+                    <a class="nav-link text-white " href="<?= $Admin->getURL() . "/DashboardAdmin"; ?>" id="nav_dash">
                         <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                             <i class="material-icons opacity-10">dashboard</i>
                         </div>

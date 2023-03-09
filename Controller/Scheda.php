@@ -1,6 +1,6 @@
 <?php
 
-namespace FitCon\Controller\DashBoard;
+namespace FitCon\Controller\Dashboard;
 
 use FitCon\Model\Profilo\Profilo;
 use FitCon\Model\USer\User;
