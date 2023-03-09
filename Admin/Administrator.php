@@ -9,7 +9,7 @@ include "Includer.php";
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="./assets/img/favicon.png">
     <title>
-        Dashboard Fit Connects
+        Dashboard <?= COMP_NAME ?>
     </title>
     <!--     Fonts and icons     -->
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
@@ -55,7 +55,7 @@ include "Includer.php";
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Fit Connects</h1>
+                    <h1 class="text-white font-weight-bold"><?= COMP_NAME ?></h1>
                     <hr class="divider" />
                 </div>
                 <div class="container my-auto">

@@ -7,7 +7,7 @@
                                     document.write(new Date().getFullYear())
                                 </script>,
                                
-                                Copyright Fit Connects
+                                Copyright <?= COMP_NAME ?>
                             </div>
                         </div>
                         <div class="col-lg-6">

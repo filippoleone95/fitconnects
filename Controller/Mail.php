@@ -29,7 +29,7 @@ function newEmail($motivo, $messaggio ,$destinatario,$username)
         $mailer->addAddress($destinatario, $username);
         $mailer->Subject = $motivo;
         $mailer->CharSet = "utf-8";
-        $mailer->setFrom("fconnects22@gmail.com", "Fit Connects",0);
+        $mailer->setFrom("fconnects22@gmail.com", COMP_NAME,0);
         $mailer->Body = $messaggio;
         $mailer->send();
         

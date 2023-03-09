@@ -30,7 +30,6 @@ $Notizie = new Notizia();
         <div class="container px-4 px-lg-5 h-100">
             <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                 <div class="col-lg-8 align-self-end">
-                    <!-- <h1 class="text-white font-weight-bold">Fit Connects</h1> -->
                     <a class="navbar-brand m-0 tex justify-content-center" href="#">
                         <h1 class="text-white font-weight-bold">Fit <i class="fa-solid fa-circle-nodes"></i> Connects</h1>
                     </a>
