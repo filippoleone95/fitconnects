@@ -26,14 +26,14 @@ if ($base != "Login" && $base != "Signup" && $base != "Administrator" && $base !
 <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
 
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<?php if ($base == "Dashbord" && !$Istruttore) { ?>
+<?php if ($base == "DashBoard" && !$Istruttore) { ?>
     <script src="../Lib/dash/personal/chart.js"></script>
 <?php } ?>
 <script src="../Lib/dash/js/material-dashboard.js?"></script>
 <script src="<?= $Vendor->getURL() ?>/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
 <script>
     base = "<?= $base ?>";
-    if (base == "Dashbord") {
+    if (base == "DashBoard") {
         $("#nav_dash").addClass("active bg-gradient-warning");
     }
     if (base == "Scheda") {

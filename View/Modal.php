@@ -79,7 +79,7 @@
   </div>
 </div>
 
-<?php if ($base == "Dashbord" && $Istruttore) { ?>
+<?php if ($base == "DashBoard" && $Istruttore) { ?>
   <!-- Modal aggiunta modifica news -->
   <div class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" id="modalNews">
     <div class="modal-dialog">

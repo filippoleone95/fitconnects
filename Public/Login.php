@@ -125,7 +125,7 @@ include "Includer.php";
                 dataType: "text",
                 success: function(risposta) {
                     if (risposta == "Attendi") {
-                        window.location.href = "./Dashbord";
+                        window.location.href = "./DashBoard";
                     } else if (risposta == "Completa la registrazione") {
                         window.location.href = "./Complete";
                     }

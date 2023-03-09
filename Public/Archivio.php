@@ -3,7 +3,7 @@
 if (!isset($_COOKIE["dark"])) {
     $_COOKIE["dark"] = "";
 }
-include("../Controller/Dashbord.php");
+include("../Controller/DashBoard.php");
 
 ?>
 <div class="container-fluid py-4" id="pagecont">

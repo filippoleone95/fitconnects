@@ -154,7 +154,7 @@ include "Includer.php";
                 dataType: "text",
                 success: function(risposta) {
                     if (risposta == "true") {
-                        window.location.href = "./Dashbord";
+                        window.location.href = "./DashBoard";
                     } else {
                         console.log(risposta);
                     }

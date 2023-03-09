@@ -6,7 +6,7 @@ require_once "../Model/Istruttore.php";
 if (!isset($_COOKIE["dark"])) {
     $_COOKIE["dark"] = "";
 }
-include("../Controller/Dashbord.php");
+include("../Controller/DashBoard.php");
 if (!$auth->hasRole(\Delight\Auth\Role::ADMIN)) {
     header("Location:" . $Public->getURL() . "/Login.php");
 }

@@ -132,7 +132,7 @@ include "Includer.php";
                 dataType: "text",
                 success: function(risposta) {
                     if (risposta == "") {
-                        window.location.href = "./DashbordAdmin";
+                        window.location.href = "./DashboardAdmin";
                     }
                     //show modal 
                     $('#textModal').text(risposta);

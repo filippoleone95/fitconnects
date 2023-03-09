@@ -1,5 +1,5 @@
 <?php
     namespace FitConnects;
 
-    header("Location: ./public/Home.php");
+    header("Location: ./Public/Home.php");
 ?>

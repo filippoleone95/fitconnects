@@ -2,7 +2,7 @@
 if (!isset($_COOKIE["dark"])) {
     $_COOKIE["dark"] = "";
 }
-include("../Controller/Dashbord.php");
+include("../Controller/DashBoard.php");
 require("../Controller/Allenamento.php");
 
 
@@ -237,7 +237,7 @@ include($View->getURL() . "/Modal.php");
 
         $("#closeBtn").on('click', function() {
             if (window.start == "0") {
-                window.location.replace("../Public/Dashbord");
+                window.location.replace("../Public/DashBoard");
             }
         });
 
