@@ -29,16 +29,24 @@
   <script src="https://kit.fontawesome.com/f3b5704387.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
+  
   <!-- CSS Files -->
   <link id="pagestyle" href="../Lib/dash/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
   <link id="pagestyle" href="../Lib/css/custom.css" rel="stylesheet" />
+
+  <?php if($base == "Home") echo '  
+  <!-- Codice scrito in php -->
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css" rel="stylesheet" />
+  <link href="' . $Lib->getURL() . '/css/styles.css" rel="stylesheet" /> '
+   ?>
 
 </head>
 
 <body class="g-sidenav-show  bg-gray-200 <?php if (isset($_COOKIE["dark"])) {
                                             echo $_COOKIE["dark"];
                                           } ?>" id="body">
+                                          <a name="top"></a>
   <?php if ($base != "Allenamento" && $base != "Login" && $base != "PreSignup" && $base != "Signup" && $base != "Administrator" && $base != "SignupAllenatore" && $base != "Complete" && $base != "Home" && $base != "EmailVerify")
     include $View->getURL() . "/Sidenav.php" ?>
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg " id="main">
