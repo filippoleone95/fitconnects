@@ -7,6 +7,6 @@
     $Lib = new Route("../Lib");
     $Vendor = new Route("../vendor");
     $Assets = new Route("../Assets");
-    $Public = new Route("../Public");
+    $Public = new Route("../public");
     $Admin = new Route("../Admin");
 
