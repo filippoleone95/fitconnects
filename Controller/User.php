@@ -4,26 +4,48 @@ namespace FitCon\Controller\User;
 
 use function FitCon\Controller\Mail\newEmail;
 use \Delight\Auth\InvalidEmailException;
+use Exception;
 use FitCon\Model\Istruttore\Istruttore;
 use FitCon\Model\Profilo\Profilo;
 
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+$logger->info('User.php -> --- Richiamato file User.php ---');
+
+$logger->info('User.php -> Richiamato file User.php');
 include "Includer.php";
+
+$logger->info('User.php -> Richiamato file ../Model/Istruttore.php');
 require_once "../Model/Istruttore.php";
+
+$logger->info('User.php -> Richiamato file ../Model/Profilo.php');
 require_once "../Model/Profilo.php";
 
 //Registrazione Atleta
 if (isset($_POST['user']) && $_POST['user'] == "signup") {
+    $logger->info('User.php -> Avviata registrazione atleta');
 
     try {
+        
         if ($_POST['pass1'] != $_POST['pass2']) {
             die('Le due password non corrispondono');
         }
-        $userId = $auth->register($_POST['email'], $_POST['pass1'], $_POST['nome'], function ($selector, $token) {
+
+        $userId = $auth->register($_POST['email'], $_POST['pass1'], $_POST['nome'], function ($selector, $token) use ($logger) {
+            $logger->info('User.php -> Creazione link per la mail di attivazione account');
             $url = SERV_NAME . 'Public/EmailVerify?selector=' . \urlencode($selector) . '&token=' . \urlencode($token);
+
+            $logger->info('User.php -> Creazione messaggio per la mail');
             $mex = 'Per completare la registrazione seguire il seguente url : ' . $url;
-            newEmail("Registrazione", $mex, $_POST['email'], $_POST['nome']);
-            // echo  $url; // Solo in programmazione Da togliere
-            die('Controlla la tua mail! Se non la trovi controlla anche nello SPAM !');
+
+            $logger->info('User.php -> richiamo la funzione per invio mail newEmail()');
+            newEmail("Registrazione", $mex, $_POST['email'], $_POST['nome'], $logger);
+            die('Url attivazione account -> ' . $url); // Solo in programmazione Da togliere
+            //die('Controlla la tua mail! Se non la trovi controlla anche nello SPAM !');
         });
 
         echo 'We have signed up a new user with the ID ' . $userId;
@@ -35,6 +57,8 @@ if (isset($_POST['user']) && $_POST['user'] == "signup") {
         die('Utente già esistente');
     } catch (\Delight\Auth\TooManyRequestsException $e) {
         die('Troppe richieste, riprova tra poco');
+    } catch (Exception $e) {
+        die("Qualcosa è andato storto nella registazione... contattare il supporto.");
     }
 
 

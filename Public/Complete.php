@@ -103,7 +103,7 @@ include "Includer.php";
                 </div>
             </div>
             <div class=" px-4 px-lg-5">
-                <div class="small text-center text-muted my-md-4 my-sm-4">Copyright &copy; 2022 - <?= COMP_NAME ?></div>
+                <div class="small text-center text-muted my-md-4 my-sm-4">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> - <?= COMP_NAME ?></div>
             </div>
         </div>
         </div>

@@ -229,21 +229,16 @@ if (isset($Prog) && $Prog == false) { ?>
               <label class="form-label">Quanto vorresti pesare?</label>
               <input type="number" id="pesoD" name="pesoD" class="form-control">
             </div>
-
             <div class="input-group input-group-outline my-3 ">
               <label class="form-label">Quanto sei alto ? (Esprimere in cm , es. 170 cm)</label>
               <input type="number" id="altezza" name="altezza" class="form-control">
             </div>
-
-
-
             <input type="hidden" id="userP" name="userP" value="updateProg" />
           </form>
         </div>
         <div class="modal-footer">
           <button class="btn btn-primary" data-bs-target="#modalProgressi2" data-bs-dismiss="modal" data-bs-toggle="modal">Continua</button>
-          <!-- <button type="button" class="btn btn-primary" onclick="salvaProg()">Salva</button> -->
-          <!--  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button> -->
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
         </div>
       </div>
     </div>
@@ -283,8 +278,6 @@ if (isset($Prog) && $Prog == false) { ?>
                 <option value="Altro">Altro</option>
               </select>
             </div>
-
-
             <input type="hidden" id="userP" name="userP" value="updateProg" />
           </form>
         </div>

@@ -49,7 +49,7 @@ include "../Controller/EmailVerify.php";
                     </div>
                 </div>
                 <div class=" px-4 px-lg-5">
-                    <div class="small text-center text-muted">Copyright &copy; 2022 - <?= COMP_NAME ?></div>
+                    <div class="small text-center text-muted">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> - <?= COMP_NAME ?></div>
                 </div>
             </div>
         </div>

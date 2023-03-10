@@ -1,5 +1,17 @@
 <?php
+
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+$logger->info('PreSignup.php -> --- Richiamato file PreSignup.php ---');
+
+$logger->info('PreSignup.php -> Richiamato file Includer.php');
 include "Includer.php";
+
+$logger->info('PreSignup.php -> Restituisco codice HTML');
 ?>
 
 
@@ -25,7 +37,10 @@ include "Includer.php";
 </style>
 
 <body id="page-top">
-    <?php require "../View/Main_nav.php" ?>
+    <?php
+    $logger->info('Login.php -> Includo file View/Main_nav.php');
+    require "../View/Main_nav.php"
+    ?>
     <!-- Masthead-->
     <header class="masthead" style="padding-top: 5rem;">
         <div class="container px-4 px-lg-5 h-100">
@@ -44,41 +59,28 @@ include "Includer.php";
                                         <div class="bg-gradient-warning shadow-warning border-radius-lg py-3 pe-1">
                                             <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Come vuoi registrarti ?</h4>
                                             <div class="row mt-3">
-                                           
-
-
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-body">
-
                                         <div class="row justify-content-center">
                                             <div class="col-6 text-center ms-auto my-0">
                                                 <div class="input-group input-group-outline my-3 justify-content-center">
                                                     <a type="button" class="btn btn-warning" href="./Signup">
-                                                    <i class="material-icons opacity-10" style="font-size: 3rem;">fitness_center</i><br>
-                                                    <p class="h6 text-bold text-light">Atleta</p>
-                                                        
+                                                        <i class="material-icons opacity-10" style="font-size: 3rem;">fitness_center</i><br>
+                                                        <p class="h6 text-bold text-light">Atleta</p>
                                                     </a>
-                                           
                                                 </div>
                                             </div>
                                             <div class="col-6 text-center ms-auto my-0">
                                                 <div class="input-group input-group-outline my-3 justify-content-center">
                                                     <a type="button" class="btn btn-primary" href="./SignupAllenatore">
-                                                    <i class="material-icons opacity-10" style="font-size: 3rem;">sports</i><br>
-                                                    <p class="h6 text-bold text-light">Istruttore</p>
-                                                        
+                                                        <i class="material-icons opacity-10" style="font-size: 3rem;">sports</i><br>
+                                                        <p class="h6 text-bold text-light">Istruttore</p>
                                                     </a>
-                                              
                                                 </div>
                                             </div>
                                         </div>
-
-
-
-
-
                                         <div class="row justify-content-center">
                                             <h2>
                                                 <a href="./Login" class="btn btn-link">
@@ -87,7 +89,6 @@ include "Includer.php";
                                             </h2>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -95,7 +96,7 @@ include "Includer.php";
                 </div>
             </div>
             <div class=" px-4 px-lg-5">
-                <div class="small text-center text-muted my-md-4 my-sm-4">Copyright &copy; 2022 - <?= COMP_NAME ?></div>
+                <div class="small text-center text-muted my-md-4 my-sm-4">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> - <?= COMP_NAME ?></div>
             </div>
         </div>
         </div>
@@ -103,10 +104,12 @@ include "Includer.php";
     </header>
 
     <?php
+    
+    $logger->info('PreSignup.php -> Includo file /Modal.php');
     include($View->getURL() . "/Modal.php");
+    $logger->info('PreSignup.php -> Includo file /JS_Script.php');
     include($View->getURL() . "/JS_Script.php");
     ?>
-
 
     <!-- Bootstrap core JS-->
     <script src="<?= $Vendor->getURL() ?>/twbs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -115,7 +118,7 @@ include "Includer.php";
     <!-- Core theme JS-->
     <script src="<?= $Lib->getURL() ?>/js/scripts.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-   
-</body>
 
+</body>
 </html>
+<?php $logger->info('PreSignup.php -> Fine file'); ?>

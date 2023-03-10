@@ -1,16 +1,30 @@
 <?php
 
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+$logger->info('Home.php -> --- Richiamato file Home.php ---');
+
 use FitCon\Model\Notizia\Notizia;
 
+$logger->info('Home.php -> Richiamato file Includer.php');
 include "Includer.php";
+
+$logger->info('Home.php -> Istanziata classe Notizia');
 $Notizie = new Notizia();
 
+$logger->info('Home.php -> Restituisco codice HTML');
 ?>
 
 <body id="page-top">
     <!-- Navigation-->
     <?php
-    include($View->getURL() . "/JS_Script.php"); ?>
+    $logger->info('Home.php -> Includo file /JS_Script.php');
+    include($View->getURL() . "/JS_Script.php"); 
+    ?>
     <nav class="navbar navbar-expand-lg  fixed-top py-3" id="mainNav">
         <div class="container px-4 px-lg-5">
             <a class="navbar-brand" href="#top">FitConnects</a>
@@ -107,7 +121,7 @@ $Notizie = new Notizia();
     <!-- Footer-->
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; 2022 - FitConnects</div>
+            <div class="small text-center text-muted">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> - <?= COMP_NAME ?></div>
         </div>
     </footer>
     <!-- Bootstrap core JS-->
@@ -120,3 +134,5 @@ $Notizie = new Notizia();
 </body>
 
 </html>
+
+<?php $logger->info('Home.php -> Fine file'); ?>

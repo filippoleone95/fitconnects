@@ -1,5 +1,18 @@
 <?php
+
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+$logger->info('Login.php -> --- Richiamato file Login.php ---');
+
+$logger->info('Login.php -> Richiamato file Includer.php');
 include "Includer.php";
+
+$logger->info('Login.php -> Restituisco codice HTML');
+
 ?>
 
 <style>
@@ -22,7 +35,10 @@ include "Includer.php";
 </style>
 
 <body id="page-top">
-    <?php require "../View/Main_nav.php" ?>
+    <?php
+    $logger->info('Login.php -> Includo file View/Main_nav.php');
+    require "../View/Main_nav.php" 
+    ?>
     <!-- Masthead-->
     <header class="masthead" style="padding-top: 5rem;">
         <div class="container px-4 px-lg-5 h-100">
@@ -89,15 +105,16 @@ include "Includer.php";
             </div>
             <div class="row gx-4 gx-lg-5 align-items-center justify-content-center text-center">
                 <div class="my-auto px-4 px-lg-5">
-                    <div class="small text-center text-muted">Copyright &copy; 2022 - <?= COMP_NAME ?></div>
+                    <div class="small text-center text-muted">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> - <?= COMP_NAME ?></div>
                 </div>
             </div>
         </div>
     </header>
 
     <?php
-
+    $logger->info('Login.php -> Includo file /Modal.php');
     include($View->getURL() . "/Modal.php");
+    $logger->info('Login.php -> Includo file /JS_Script.php');
     include($View->getURL() . "/JS_Script.php");
     ?>
 
@@ -113,6 +130,7 @@ include "Includer.php";
             $email = $("#email").val();
             $pass = $("#pass1").val();
             $user = $("#user").val();
+            console.log("Login -> Controllo se l'utente ha completato la registrazione");
 
             $.ajax({
                 type: "POST",
@@ -125,8 +143,10 @@ include "Includer.php";
                 dataType: "text",
                 success: function(risposta) {
                     if (risposta == "Attendi") {
+                        console.log("Login -> L'utente ha completato la registrazione");
                         window.location.href = "./Dashboard";
                     } else if (risposta == "Completa la registrazione") {
+                        console.log("Login -> L'utente NON ha completato la registrazione");
                         window.location.href = "./Complete";
                     }
                     //show modal 
@@ -139,7 +159,6 @@ include "Includer.php";
             });
         }
     </script>
-
 </body>
-
 </html>
+<?php $logger->info('Login.php -> Fine file'); ?>

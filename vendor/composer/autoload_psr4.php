@@ -11,7 +11,7 @@ return array(
     'ReCaptcha\\' => array($vendorDir . '/google/recaptcha/src/ReCaptcha'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
-    'PHPAuth\\' => array($vendorDir . '/phpauth/phpauth'),
+    'PHPAuth\\' => array($vendorDir . '/phpauth/phpauth/sources'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'Delight\\Http\\' => array($vendorDir . '/delight-im/http/src'),
     'Delight\\Db\\' => array($vendorDir . '/delight-im/db/src'),

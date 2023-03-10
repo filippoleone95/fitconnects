@@ -1,15 +1,15 @@
 <?php
 
-//include PHPAuth files
-include('../../Config.php');
-include('../../Auth.php');
+include __DIR__ . '/../../vendor/autoload.php';
 
 //database-connection-object
 $dbh = new PDO('mysql:host=localhost;dbname=database', 'username', 'password');
 
 //creating a config-object is enough at this point
-$config = new PHPAuth\Config($dbh);
-// $auth   = new PHPAuth\Auth($dbh, $config);
+
+$config = new \PHPAuth\Config($dbh);
+
+// $auth   = new \PHPAuth\Auth($dbh, $config);
 
 ?>
 
@@ -21,7 +21,7 @@ $config = new PHPAuth\Config($dbh);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- js file for password evaluation -->
     <script type="text/javascript" src="zxcvbn.js"></script>
-    <title>Titel</title>
+    <title>Title</title>
 
     <!-- some styles -->
     <style>
@@ -53,7 +53,6 @@ $config = new PHPAuth\Config($dbh);
 </head>
 
 <body>
-
     <!-- login / registration form -->
     <form action="/">
         <input type="password" id="password-field" />
@@ -79,8 +78,8 @@ $config = new PHPAuth\Config($dbh);
             //evaluate password strength
             let result = zxcvbn(password);
 
-            //set minimum_score via php 
-            <?php echo 'let minimum_score =' . $config->password_min_score; ?>
+            //set minimum_score via php
+            let minimum_score = <?php echo $config->password_min_score; ?>;
 
             //enable submit button
             if (result.score >= minimum_score) {

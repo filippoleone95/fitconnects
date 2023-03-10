@@ -1,5 +1,16 @@
 <?php
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+$logger->info('Signup.php -> --- Richiamato file Signup.php ---');
+
+$logger->info('Signup.php -> Richiamato file Includer.php');
 include "Includer.php";
+
+$logger->info('Signup.php -> Restituisco codice HTML');
 ?>
 
 
@@ -120,7 +131,7 @@ include "Includer.php";
                 </div>
             </div>
             <div class=" px-4 px-lg-5">
-                <div class="small text-center text-muted my-md-4 my-sm-4">Copyright &copy; 2022 - <?= COMP_NAME ?></div>
+                <div class="small text-center text-muted my-md-4 my-sm-4">Copyright &copy; <script>document.write(/\d{4}/.exec(Date())[0])</script> - <?= COMP_NAME ?></div>
             </div>
         </div>
         </div>
@@ -128,7 +139,9 @@ include "Includer.php";
     </header>
 
     <?php
+    $logger->info('Signup.php -> Includo file /Modal.php');
     include($View->getURL() . "/Modal.php");
+    $logger->info('Signup.php -> Includo file /JS_Script.php');
     include($View->getURL() . "/JS_Script.php");
     ?>
 
@@ -179,5 +192,5 @@ include "Includer.php";
         }
     </script>
 </body>
-
 </html>
+<?php $logger->info('Signup.php -> Fine file'); ?>

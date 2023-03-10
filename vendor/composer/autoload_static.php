@@ -66,7 +66,7 @@ class ComposerStaticInitc1f7cea5b7ee5f55a6ba3d34dfb43ed6
         ),
         'PHPAuth\\' => 
         array (
-            0 => __DIR__ . '/..' . '/phpauth/phpauth',
+            0 => __DIR__ . '/..' . '/phpauth/phpauth/sources',
         ),
         'Monolog\\' => 
         array (

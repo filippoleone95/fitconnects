@@ -1,17 +1,33 @@
 <?php
 
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+$logger->info('Dashboard.php -> --- Richiamato file Dashboard.php ---');
+
+$logger->info('Dashboard.php -> Controllo se nei cookie era impostato il tema dark');
 if (!isset($_COOKIE["dark"])) {
     $_COOKIE["dark"] = "";
 }
+
+$logger->info('Dashboard.php -> Richiamato file /Controller/Dashboard.php');
 include("../Controller/Dashboard.php");
+
+$logger->info('Dashboard.php -> Restituisco codice HTML');
 
 ?>
 <div class="container-fluid py-4">
     <?php
+    $logger->info("Dashboard.php -> Restituisco la rispettiva dashboard in base all'utente loggato");
     if ($Amministratore) {
+        $logger->info("Dashboard.php -> Carico la dashboard per l'amministratore");
         header("Location:" . $Admin->getURL() . "/DashboardAdmin");
     }
     if (!$Istruttore) { 
+        $logger->info("Dashboard.php -> Carico la dashboard per l'istruttore");
     ?>
       
         <h4 class="mb-1">Funzioni Rapide</h4>
@@ -252,6 +268,7 @@ include("../Controller/Dashboard.php");
         </div>
     <?php
     } else {
+        $logger->info("Dashboard.php -> Carico la dashboard per l'altleta");
     ?>
         <h4 class="mb-1">Funzioni Rapide</h4>
         <hr class="mb-4">
@@ -367,8 +384,11 @@ include("../Controller/Dashboard.php");
     <?php
     }
 
+    $logger->info("Dashboard.php -> Richiamato file Footer.php");
     include($View->getURL() . "/Footer.php");
+    $logger->info("Dashboard.php -> Richiamato file Modal.php");
     include($View->getURL() . "/Modal.php");
+    $logger->info("Dashboard.php -> Richiamato file /JS_Script.php");
     include($View->getURL() . "/JS_Script.php");
     if ($Istruttore) {
     ?>
@@ -468,3 +488,5 @@ include("../Controller/Dashboard.php");
 </body>
 
 </html>
+
+<?php $logger->info("Dashboard.php -> Fine file"); ?>

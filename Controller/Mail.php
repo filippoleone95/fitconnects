@@ -7,16 +7,27 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+require_once __DIR__ . '/../log/LoggerUtil.php';
+/* Inizializzo il logger */
+
+use FitConnects\Log\LoggerUtil;
+// Ottiengo un'istanza del logger
+$logger = LoggerUtil::getLogger();
+
+$logger->info('Mail.php -> --- Richiamato file Mail.php ---');
+
 //Load Composer's autoloader
+$logger->info('Mail.php -> richiedo file autoload.php');
 require $Vendor->getURL() . "/autoload.php";
 
-function newEmail($motivo, $messaggio ,$destinatario,$username)
+function newEmail($motivo, $messaggio, $destinatario, $username, $logger)
 {
     //Create an instance; passing `true` enables exceptions
     //Prova
     $mailer = new PHPMailer(true);
 
     try {
+        $logger->info('Mail.php -> Inizializzo dati di invio per la mail');
         $mailer->IsSMTP();
         $mailer->Host = "smtp.gmail.com";
         $mailer->SMTPAuth = true;
@@ -32,8 +43,13 @@ function newEmail($motivo, $messaggio ,$destinatario,$username)
         $mailer->setFrom("fconnects22@gmail.com", COMP_NAME,0);
         $mailer->Body = $messaggio;
         $mailer->send();
+
+        $logger = LoggerUtil::getLogger();
+        $logger->info('Mail.php -> Mail inviata correttamente.');
+        return true;
         
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mailer->ErrorInfo}";
+        $logger->error("Mail.php -> Errore nell'invio della mail. Errore -> " . $mailer->ErrorInfo);
+        return false;
     }
 }
