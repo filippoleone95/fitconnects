@@ -1,7 +1,7 @@
 <?php
 require "../Model/Database.php";
 
-require_once __DIR__ . '/../log/LoggerUtil.php';
+require_once __DIR__ . '/../Log/LoggerUtil.php';
 
 use FitConnects\Log\LoggerUtil;
 // Ottiengo un'istanza del logger

@@ -13,7 +13,7 @@ use FitCon\Model\Notizia\Notizia;
 use FitCon\Model\Risultato\Risultato;
 use FitCon\Model\Allenamento\Allenamento;
 
-require_once __DIR__ . '/../log/LoggerUtil.php';
+require_once __DIR__ . '/../Log/LoggerUtil.php';
 
 use FitConnects\Log\LoggerUtil;
 // Ottiengo un'istanza del logger

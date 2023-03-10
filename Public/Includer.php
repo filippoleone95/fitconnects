@@ -1,6 +1,6 @@
 <?php
 
-    require_once __DIR__ . '/../log/LoggerUtil.php';
+    require_once __DIR__ . '/../Log/LoggerUtil.php';
     /* Inizializzo il logger */
     use FitConnects\Log\LoggerUtil;
     // Ottiengo un'istanza del logger

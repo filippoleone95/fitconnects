@@ -8,7 +8,7 @@ use Exception;
 use FitCon\Model\Istruttore\Istruttore;
 use FitCon\Model\Profilo\Profilo;
 
-require_once __DIR__ . '/../log/LoggerUtil.php';
+require_once __DIR__ . '/../Log/LoggerUtil.php';
 /* Inizializzo il logger */
 
 use FitConnects\Log\LoggerUtil;
@@ -117,10 +117,10 @@ if (isset($_POST['user']) && $_POST['user'] == "signup") {
             die('Codice errato!');
         }
 
-        $userId = $auth->register($_POST['email'], $_POST['pass1'], $_POST['nome'], function ($selector, $token) {
+        $userId = $auth->register($_POST['email'], $_POST['pass1'], $_POST['nome'], function ($selector, $token) use ($logger) {
             $url = SERV_NAME . '/FitCon/Public/EmailVerify?selector=' . \urlencode($selector) . '&token=' . \urlencode($token);
             $mex = 'Per completare la registrazione seguire il seguente url : ' . $url;
-            newEmail("Registrazione", $mex, $_POST['email'], $_POST['nome']);
+            newEmail("Registrazione", $mex, $_POST['email'], $_POST['nome'], $logger);
             //echo  $url; // Solo in programmazione Da togliere
 
         });
