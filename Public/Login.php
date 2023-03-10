@@ -73,7 +73,7 @@ include "Includer.php";
                                                 <input type="hidden" id="user" name="user" value="login" />
                                             </div>
                                             <div class="text-center">
-                                                <button type="submit" class="btn bg-gradient-warning w-100 my-4 mb-2" onclick="sub()">Login</button>
+                                                <button type="button" class="btn bg-gradient-warning w-100 my-4 mb-2" onclick="sub()">Login</button>
                                             </div>
                                             <h2 class="mt-4 text-sm text-center">
                                                 Non sei ancora registrato ?
