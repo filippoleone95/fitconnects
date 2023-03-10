@@ -3,13 +3,13 @@
 if (!isset($_COOKIE["dark"])) {
     $_COOKIE["dark"] = "";
 }
-include("../Controller/DashBoard.php");
+include("../Controller/Dashboard.php");
 
 ?>
 <div class="container-fluid py-4">
     <?php
     if ($Amministratore) {
-        header("Location:" . $Admin->getURL() . "/DashBoardAdmin");
+        header("Location:" . $Admin->getURL() . "/DashboardAdmin");
     }
     if (!$Istruttore) { 
     ?>

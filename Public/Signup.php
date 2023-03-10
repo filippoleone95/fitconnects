@@ -92,7 +92,7 @@ include "Includer.php";
 
                                             <div class="row justify-content-around">
                                                 <div class="col-md-auto">
-                                                    <button type="button" onclick="sub()" class="btn btn-warning">
+                                                    <button type="submit" onclick="sub()" class="btn btn-warning">
                                                         Registrati
                                                     </button>
                                                 </div>
