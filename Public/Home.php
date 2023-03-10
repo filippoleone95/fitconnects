@@ -1,7 +1,5 @@
 <?php
 
-echo get_include_path();
-
 use FitCon\Model\Notizia\Notizia;
 
 include "Includer.php";
