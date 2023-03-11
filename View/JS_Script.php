@@ -30,7 +30,7 @@ if ($base != "Login" && $base != "Signup" && $base != "Administrator" && $base !
     <script src="../Lib/dash/personal/chart.js"></script>
 <?php } ?>
 <script src="../Lib/dash/js/material-dashboard.js?"></script>
-<script src="<?= $Vendor->getURL() ?>/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
 <script>
     base = "<?= $base ?>";
     if (base == "Dashboard") {
